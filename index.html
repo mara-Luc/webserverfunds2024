@@ -6,25 +6,13 @@
         
         <title>Index</title>
 
-        <!--Aesthetic to make the header look better, also not sure if necessary for this lab but wanted to make use of div-->
-        <style>
-            .myDiv 
-            {
-                border: 5px outset goldenrod;
-                background-color: grey;    
-                text-align: center;
-            }
-
-            .center
-            {
-                text-align: center;
-            }
-                
-        </style>
+        <!--Link to the Aesthetic CCS file for simplicity in future-->
+        <link rel="stylesheet" href="styles.css">
 
     </head>
 
     <body>
+
         <!-- div used to signify that this area will be effected by CCS -->
         <div class="myDiv">
             <h1>Welcome to My Website</h1>
@@ -71,12 +59,21 @@
         
         </ul>
 
+        <form>
+            <label for="requiredField">Required Field:</label>
+            <input type="text" id="requiredField" onblur="validateField()">
+            <span id="errorMessage" class="error">This field is required</span>
+        </form>
+
         <!-- Java Portion-->
         <h3>Try out my Java Script Buttons!</h3>
         
         <!--Marker for hiding my buttons-->
         <div id="myDIV">
         
+            <!--Link to my Java Script file with functions-->
+            <script src="Sandbox.js"></script>
+
             <div class="center">
         
                 <!-- inline JavaScript example of an alert button --> 
@@ -86,35 +83,11 @@
 
                 <!-- click and paragraph change using a function and interal java inside <script></script> -->
                 <button onclick="changeText()">Click me to change text</button>
-
-                <script>
-                    function changeText() 
-                    {
-                        document.getElementById("myParagraph").innerHTML = "The text has been changed!";
-                    }
-                </script>
             
                 <br><br>
 
                 <!--Hide button function-->
                 <meta name="viewport" content="width=device-width, initial-scale=1">
-            
-                <script>
-                //using a function to hide content
-                    function hidebtn() {
-                        var x = document.getElementById("myDIV");
-                    
-                        if (x.style.display === "none") 
-                            {
-                                x.style.display = "block";
-                            } 
-                        else 
-                            {
-                                x.style.display = "none";
-                            }
-                    }
-            
-                </script>
             
                 <!--Button to hide content-->
                 <button onclick="hidebtn()">Don't Touch Me!</button>
@@ -124,28 +97,34 @@
                 <!--Button to change/modify images-->
                 <button onclick="imagemod()">New scenery?</button>
 
+                <br><br>
+
+                <!--Button to change/modify button text-->
+                <button onclick="changebtn(this)">Are you new here?</button>
+
+                <br><br>
+
+                <!--API simple fetch text-->
+                <p id="demo">Fetch a file to change this text.</p>
+
                 <script>
-                    function imagemod() 
+                    getText("fetch_info.txt");
+
+                    async function getText(file) 
                         {
-                            document.getElementById("myImg1").src = "picks/Digimon.jpg";
-                            document.getElementById("myImg2").src = "picks/Digimon title.jpg";
-                            document.getElementById("myImg3").src = "picks/digimon-adventure-tr.jpg";
+                            let myObject = await fetch(file);
+                            let myText = await myObject.text();
+                            document.getElementById("demo").innerHTML = myText;
                         }
-                
                 </script>
 
                 <br><br>
 
-                <button onclick="changebtn(this)">Are you new here?</button>
-
-                <script>
-                    function changebtn(elem) 
-                    {
-                        elem.innerHTML = "Hello World!";
-                    }
-                </script>
+                <!--API simple fetch text
+                <p id="test">Fetch a file to change this text.</p>-->
 
                 </div>
+                
             </div>
 
     </body>

@@ -1,0 +1,17 @@
+.myDiv 
+{
+    border: 5px outset goldenrod;
+    background-color: grey;    
+    text-align: center;
+}
+
+.center
+{
+    text-align: center;    
+}
+
+.error 
+{
+    color: red;
+    display: none;
+}
