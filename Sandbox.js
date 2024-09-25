@@ -50,5 +50,28 @@ function validateField()
                     errorMessage.style.display = "none";
                 }
     }
+/**/
+getText("fetch_info.txt");
 
+async function getText(file) 
+    {
+        let myObject = await fetch(file);
+        let myText = await myObject.text();
+        document.getElementById("demo").innerHTML = myText;
+    }
+
+async function fetchText() {
+    try 
+        {
+            const response = await fetch('fetch_info.txt');
+            const text = await response.text();
+            document.getElementById('content').innerHTML = text;
+        } 
     
+    catch (error) 
+        {
+            console.error('Error fetching the text file:', error);
+        
+        }
+        
+    }
