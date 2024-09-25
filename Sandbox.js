@@ -50,7 +50,7 @@ function validateField()
                     errorMessage.style.display = "none";
                 }
     }
-/**/
+/*
 getText("fetch_info.txt");
 
 async function getText(file) 
@@ -59,7 +59,7 @@ async function getText(file)
         let myText = await myObject.text();
         document.getElementById("demo").innerHTML = myText;
     }
-
+*/
 async function fetchText() {
     try 
         {
