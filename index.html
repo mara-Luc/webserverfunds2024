@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 
-<html lang="en"></html>
-
 <html>
 
     <head>
@@ -27,7 +25,7 @@
     </head>
 
     <body>
-        <!--div used to signify that this area will be effected by CCS-->
+        <!-- div used to signify that this area will be effected by CCS -->
         <div class="myDiv">
             <h1>Welcome to My Website</h1>
             <h2>Where I will be developing my skills and demoing them here!</h2>
@@ -35,16 +33,18 @@
         
         <!--Images with div to center them-->
         <div class="center">
-        <img src="picks/pexels-pixabay-163073.jpg" width="384" height="255">
-        <img src="picks/pexels-pixabay-163100.jpg" width="384" height="255">
-        <img src="picks/glasses-8779028_960_720.jpg" width="384" height="255">
+            <!--image id to Modify images later-->
+            <img id="myImg1" src="picks/pexels-pixabay-163073.jpg" width="384" height="255">
+            <img id="myImg2" src="picks/pexels-pixabay-163100.jpg" width="384" height="255">
+            <img id="myImg3" src="picks/glasses-8779028_960_720.jpg" width="384" height="255">
+            
         </div>
         
         <!--Header change-->
         <h3>What to expect and where this is going:</h3>
     
-        <!--Paragraph-->
-        <p>This site is a submission for a class that I am taking at Dawson college where I am learning the fundamentals of creating Web servers. 
+        <!--Paragraph with java id for modification-->
+        <p id="myParagraph">This site is a submission for a class that I am taking at Dawson college where I am learning the fundamentals of creating Web servers. 
         The goal is to eventually create a site that will be used in conjunction with a project that I will build. 
         I am not sure yet what I will build for my project yet but as things developed so will this site.</p>
     
@@ -70,6 +70,83 @@
             <li><a href="https://www.pexels.com/search/electronics/" target="_blank">Images taken from Pexels</a></li>
         
         </ul>
+
+        <!-- Java Portion-->
+        <h3>Try out my Java Script Buttons!</h3>
+        
+        <!--Marker for hiding my buttons-->
+        <div id="myDIV">
+        
+            <div class="center">
+        
+                <!-- inline JavaScript example of an alert button --> 
+                <button type="button" onclick="alert('Welcome to the Digital... World')">Show Alert</button>
+            
+                <br><br>
+
+                <!-- click and paragraph change using a function and interal java inside <script></script> -->
+                <button onclick="changeText()">Click me to change text</button>
+
+                <script>
+                    function changeText() 
+                    {
+                        document.getElementById("myParagraph").innerHTML = "The text has been changed!";
+                    }
+                </script>
+            
+                <br><br>
+
+                <!--Hide button function-->
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+            
+                <script>
+                //using a function to hide content
+                    function hidebtn() {
+                        var x = document.getElementById("myDIV");
+                    
+                        if (x.style.display === "none") 
+                            {
+                                x.style.display = "block";
+                            } 
+                        else 
+                            {
+                                x.style.display = "none";
+                            }
+                    }
+            
+                </script>
+            
+                <!--Button to hide content-->
+                <button onclick="hidebtn()">Don't Touch Me!</button>
+
+                <br><br>
+
+                <!--Button to change/modify images-->
+                <button onclick="imagemod()">New scenery?</button>
+
+                <script>
+                    function imagemod() 
+                        {
+                            document.getElementById("myImg1").src = "picks/Digimon.jpg";
+                            document.getElementById("myImg2").src = "picks/Digimon title.jpg";
+                            document.getElementById("myImg3").src = "picks/digimon-adventure-tr.jpg";
+                        }
+                
+                </script>
+
+                <br><br>
+
+                <button onclick="changebtn(this)">Are you new here?</button>
+
+                <script>
+                    function changebtn(elem) 
+                    {
+                        elem.innerHTML = "Hello World!";
+                    }
+                </script>
+
+                </div>
+            </div>
 
     </body>
 
