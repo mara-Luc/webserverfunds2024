@@ -1,10 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+
 <head>
-    <meta charset="UTF-8">
     <title>Server Info</title>
 </head>
+
 <body>
-    <p><?php var_dump($_SERVER); ?></p>
+
+    <php? 
+        echo $_SERVER['PHP_SELF'];
+        echo $_SERVER['SERVER_NAME'];
+        echo $_SERVER['HTTP_HOST'];
+        echo $_SERVER['HTTP_REFERER'];
+        echo $_SERVER['HTTP_USER_AGENT'];
+        echo $_SERVER['SCRIPT_NAME'];
+    ?>
+
 </body>
+
 </html>
