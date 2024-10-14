@@ -1,20 +1,22 @@
+
 <!DOCTYPE html>
-
-<head>
-    <title>Server Info</title>
-</head>
-
+<html>
 <body>
 
-    <php? 
-        echo $_SERVER['PHP_SELF'];
-        echo $_SERVER['SERVER_NAME'];
-        echo $_SERVER['HTTP_HOST'];
-        echo $_SERVER['HTTP_REFERER'];
-        echo $_SERVER['HTTP_USER_AGENT'];
-        echo $_SERVER['SCRIPT_NAME'];
-    ?>
+<?php
+echo $_SERVER['PHP_SELF'];
+echo "<br>";
+echo $_SERVER['SERVER_NAME'];
+echo "<br>";
+echo $_SERVER['HTTP_HOST'];
+echo "<br>";
+echo $_SERVER['HTTP_REFERER'];
+echo "<br>";
+echo $_SERVER['HTTP_USER_AGENT'];
+echo "<br>";
+echo $_SERVER['SCRIPT_NAME'];
+?>
 
 </body>
-
 </html>
+
