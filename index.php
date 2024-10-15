@@ -36,9 +36,11 @@
         The goal is to eventually create a site that will be used in conjunction with a project that I will build. 
         I am not sure yet what I will build for my project yet but as things developed so will this site.</p>
     
-        <h3>Server Info</h3>
-        <?php
-        
+        <!-- PHP commands Portion-->
+        <h3>Server Info Var dump test</h3>
+        <p><?php var_dump($_SERVER); ?></p>
+        <h3>Server Info individual echos</h3>
+        <?php                    
             echo $_SERVER['PHP_SELF'];
             echo "<br>";
             echo $_SERVER['SERVER_NAME'];
