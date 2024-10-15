@@ -37,27 +37,16 @@
         I am not sure yet what I will build for my project yet but as things developed so will this site.</p>
     
         <!-- PHP commands Portion-->
+        <!-- Var dump test-->
         <h3>Server Info Var dump test</h3>
         <p><?php var_dump($_SERVER); ?></p>
-        <h3>Server Info individual echos</h3>
+        
+        <!-- make a commad do this https://www.whatismybrowser.com/detect/what-is-my-user-agent-->
+        <h3>Server Info what-is-my-user-agent</h3>
         <?php                    
-            echo $_SERVER['PHP_SELF'];
-            echo "<br>";
-            echo $_SERVER['SERVER_NAME'];
-            echo "<br>";
-            echo $_SERVER['HTTP_HOST'];
-            echo "<br>";
-            echo $_SERVER['HTTP_REFERER'];
-            echo "<br>";
-            echo $_SERVER['HTTP_USER_AGENT'];
-            echo "<br>";
-            echo $_SERVER['SCRIPT_NAME'];
-            echo "<br>";
             $userAgent = $_SERVER['HTTP_USER_AGENT'];
             echo "<p>Your User Agent is: $userAgent</p>";
-
         ?>
-
 
         <h3>Navagation</h3>
     
