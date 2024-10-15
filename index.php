@@ -39,7 +39,7 @@
         <!-- PHP commands Portion-->
         <!-- Var dump test-->
         <h3>Server Info Var dump test</h3>
-        <p><?php var_dump($_SERVER); ?></p>
+        <p><?php #var_dump($_SERVER); ?></p>
         
         <!-- make a commad do this https://www.whatismybrowser.com/detect/what-is-my-user-agent-->
         <h3>Server Info what-is-my-user-agent</h3>
@@ -72,7 +72,7 @@
         </ul>
 
         <!--modified form to action/method for php "form_response.php"-->
-        <form action="welcome.php" method="GET">
+        <form><!--<form action="welcome.php" method="GET">-->
             <!-- Your form inputs here -->
             <label for="requiredField">Required Field:</label>
             <input type="text" id="requiredField" onblur="validateField()">

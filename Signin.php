@@ -12,7 +12,9 @@
         <h1>Sign in</h1>
         
         <!--using forms to Authenticate user with user name being required and having a placeholder for clairity-->
-        <form>
+        <!--modified form to action/method for php "form_response.php"-->
+        <form action="welcome.php" method="GET">
+            <!-- Your form inputs here -->
             
             <label for="username">Username</label>
             
