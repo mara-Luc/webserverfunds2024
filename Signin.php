@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+    
+        <title>Sign in</title>
+    
+    </head>
+
+    <body>
+        <h1>Sign in</h1>
+        
+        <!--using forms to Authenticate user with user name being required and having a placeholder for clairity-->
+        <form>
+            
+            <label for="username">Username</label>
+            
+            <input type="username" id="username" name="username" placeholder="your username or email" required>
+            <br>
+
+            <!--using forms to Authenticate user with password that needs to be 8 char using pattern and having a placeholder for clairity-->
+            <label for="pwd">Password:</label>
+        
+            <input type="password" id="pwd" name="pwd" pattern=".{8,}" title="Eight or more characters" placeholder="your password" required>
+            <br><br>            
+            <input type="submit" value="Submit"/>   
+        </form>
+    
+        <br><br>
+
+        <!--A way back to main site-->
+        <a href="index.php">Back to the landing page</a>
+    
+    </body>
+
+</html> 

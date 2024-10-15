@@ -51,13 +51,13 @@
         <h3>Navagation</h3>
     
         <!--Connecting it to other pages on the same tab-->
-        <a href="createaccount.html">Create an Account?</a>
+        <a href="createaccount.php">Create an Account?</a>
         <br><br>
     
-        <a href="Signin.html">Already have an Account? Sign in?</a>
+        <a href="Signin.php">Already have an Account? Sign in?</a>
         <br><br>
     
-        <a href="about.html">About Me</a>
+        <a href="about.php">About Me</a>
         <br><br>
     
         <h3>References</h3>
@@ -71,7 +71,9 @@
         
         </ul>
 
-        <form>
+        <!--modified form to action/method for php "form_response.php"-->
+        <form action="welcome.php" method="GET">
+            <!-- Your form inputs here -->
             <label for="requiredField">Required Field:</label>
             <input type="text" id="requiredField" onblur="validateField()">
             <span id="errorMessage" class="error">This field is required</span>
