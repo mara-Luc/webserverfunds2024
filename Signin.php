@@ -20,6 +20,26 @@
             
             <input type="username" id="username" name="username" placeholder="your username or email" required>
             <br>
+            
+            <label for="firstname">First Name</label>
+            
+            <input type="firstname" id="firstname" name="firstname" placeholder="John" required>
+            <br>
+
+            <label for="lastname">Last Name</label>
+            
+            <input type="lastname" id="lastname" name="lastname" placeholder="Smith" required>
+            <br>
+
+            <label for="school">School Attending</label>
+            
+            <input type="school" id="school" name="school" placeholder="Hogwarts" required>
+            <br>
+
+            <label for="spell">What is your favorite Spell?</label>
+            
+            <input type="spell" id="spell" name="spell" placeholder="Expelliarmus" required>
+            <br>
 
             <!--using forms to Authenticate user with password that needs to be 8 char using pattern and having a placeholder for clairity-->
             <label for="pwd">Password:</label>
