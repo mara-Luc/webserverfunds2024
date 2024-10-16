@@ -13,7 +13,7 @@
         
         <!--using forms to Authenticate user with user name being required and having a placeholder for clairity-->
         <!--modified form to action/method for php "form_response.php"-->
-        <form action="welcome.php" method="GET">
+        <form action="welcome.php" method="POST">
             <!-- Your form inputs here -->
             
             <label for="username">Username</label>
