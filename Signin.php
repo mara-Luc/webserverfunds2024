@@ -72,22 +72,6 @@
             <label for="username">Select a username:</label><br/>
             
             <select id="username" name="username">
-            
-                <?php
-                    foreach($result as $row)
-                    {
-                        echo "<option
-                        value='{$row['username']}'>{$row['username']}</option>\n";
-                    }
-                    
-                    foreach($result as $row) // There should only be one row returned!
-                        {
-                            echo "<p>Hello, your name is: $firstname $lastname. Your school is: $school. Your favorite spell is: $spell.</p>";
-                        }
-                        // Don't forget to close the connection!
-                        mysqli_close($conn);
-        
-                ?>
 
             </select>
         <br/>
