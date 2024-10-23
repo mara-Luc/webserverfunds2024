@@ -19,7 +19,6 @@
             
                 $sql = "select * from users;";
                 $result = mysqli_query($conn, $sql);
-        
         ?>
         
     </head>
@@ -66,7 +65,34 @@
         </form>
     
         <br><br>
+        
+        <!-- -->
+        <form action="Data_request.php" method="get">
 
+            <label for="username">Select a username:</label><br/>
+            
+            <select id="username" name="username">
+            
+                <?php
+                    foreach($result as $row)
+                    {
+                        echo "<option
+                        value='{$row['username']}'>{$row['username']}</option>\n";
+                    }
+            
+                    // Don't forget to close the connection!
+                    mysqli_close($conn);
+        
+                ?>
+
+            </select>
+        <br/>
+        
+        <input type="submit" value="submit"/>
+        
+        </form>
+
+        <br><br>
         <!--A way back to main site-->
         <a href="index.php">Back to the landing page</a>
     
