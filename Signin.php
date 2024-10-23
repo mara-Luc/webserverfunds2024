@@ -79,9 +79,13 @@
                         echo "<option
                         value='{$row['username']}'>{$row['username']}</option>\n";
                     }
-            
-                    // Don't forget to close the connection!
-                    mysqli_close($conn);
+                    
+                    foreach($result as $row) // There should only be one row returned!
+                        {
+                            echo "<p>Hello, your name is: $firstname $lastname. Your school is: $school. Your favorite spell is: $spell.</p>";
+                        }
+                        // Don't forget to close the connection!
+                        mysqli_close($conn);
         
                 ?>
 
@@ -91,34 +95,6 @@
         <input type="submit" value="submit"/>
         
         </form>
-
-        <?php
-            // Retrieve submitted information
-            $ = htmlspecialchars($_GET["courses"]);
-            $server = "localhost";
-            $username = "php";
-            $password = "php_password";
-            $database = "testdb";
-            $conn = mysqli_connect($server, $username, $password, $database);
-            // Check for successful connection
-            if (!$conn) {
-                die("Connection failed: {mysqli_connect_error()}");
-                }
-            
-                $sql = "select firstname, lastname, school, spell from courses where
-                username='{$username}';";
-                $result = mysqli_query($conn, $sql);
-        ?>
-
-            
-        <?php
-            foreach($result as $row) // There should only be one row returned!
-                {
-                    echo "<p>Hello, your name is: $firstname $lastname. Your school is: $school. Your favorite spell is: $spell.</p>";
-                }
-                // Don't forget to close the connection!
-                mysqli_close($conn);
-        ?>
 
         <br><br>
         <!--A way back to main site-->
