@@ -71,7 +71,7 @@
 
             <label for="username">Select a username:</label><br/>
             
-            <select id="username" name="username">
+            <select username="username">
                 
                 <?php
                     foreach($result as $row)

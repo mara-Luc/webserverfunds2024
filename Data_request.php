@@ -4,7 +4,7 @@
     
     <?php
         // Retrieve submitted information
-        $course_number = htmlspecialchars($_GET["users"]);
+        $username = htmlspecialchars($_GET["users"]);
         $server = "localhost";
         $username = "php";
         $password = "Voidnull0";
@@ -16,8 +16,7 @@
             die("Connection failed: {mysqli_connect_error()}");
         }
 
-        $sql = "select course_name, num_students from courses where
-        course_number='{$course_number}';";
+        $sql = "select firstname, lastname, school, spell from courses where username='{$username}';";
         $result = mysqli_query($conn, $sql);
     ?>
 
@@ -27,7 +26,7 @@
     <?php
         foreach($result as $row)
         {
-            echo "<option value='{$row['username']}'>{$row['name']}</option>\n";
+            echo "<option value='{$row['username']}'>{$row['username']}</option>\n";
         }
                     
         foreach($result as $row) // There should only be one row returned!
