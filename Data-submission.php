@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-    <title>Form Response</title>
+    <title>Data Submission</title>
 </head>
 
 <body>
