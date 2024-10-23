@@ -2,6 +2,20 @@
 <head>
     <title>Form Response</title>
 </head>
+    <?php
+        $server = "localhost";
+        $username = "php";
+        $password = "Voidnull0";
+        $database = "signinDB";
+        $conn = mysqli_connect($server, $username, $password, $database);
+        // Check for successful connection
+        if (!$conn) {
+            die("Connection failed: {mysqli_connect_error()}");
+            }
+        $sql = "select * from users;";
+        $result = mysqli_query($conn, $sql);
+    ?>
+
 <body>
     <!-- Original dump of GET and POST
     <p>GET: <?= var_dump($_GET) ?></p>

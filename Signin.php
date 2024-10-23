@@ -5,7 +5,23 @@
     <head>
     
         <title>Sign in</title>
-    
+        
+        <?php
+            $server = "localhost";
+            $username = "php";
+            $password = "Voidnull0";
+            $database = "signinDB";
+            $conn = mysqli_connect($server, $username, $password, $database);
+            // Check for successful connection
+            if (!$conn) {
+                die("Connection failed: {mysqli_connect_error()}");
+                }
+            
+                $sql = "select * from users;";
+                $result = mysqli_query($conn, $sql);
+        
+        ?>
+        
     </head>
 
     <body>
@@ -13,7 +29,7 @@
         
         <!--using forms to Authenticate user with user name being required and having a placeholder for clairity-->
         <!--modified form to action/method for php "form_response.php"-->
-        <form action="welcome.php" method="POST">
+        <form action="Data_submission.php" method="POST">
             <!-- Your form inputs here -->
             
             <label for="username">Username</label>
