@@ -110,7 +110,7 @@
                 $result = mysqli_query($conn, $sql);
         ?>
 
-            Your selected username <?= $username ?>.<br/>
+            
         <?php
             foreach($result as $row) // There should only be one row returned!
                 {
