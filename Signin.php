@@ -67,7 +67,7 @@
         <br><br>
         
         <!-- -->
-        <form action="Data_request.php" method="get">
+        <form action="Data_request.php" method="GET">
 
             <label for="username">Select a username:</label><br/>
             
