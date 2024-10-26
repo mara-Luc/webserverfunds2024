@@ -4,7 +4,7 @@
     <title>Process Form</title>
     <?php
     // Retrieve submitted information
-    $username = htmlspecialchars($_GET["users"]);
+    $username = htmlspecialchars($_POST["username"]);
     $server = "localhost";
     $db_username = "php";
     $password = "Voidnull0";
