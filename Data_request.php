@@ -21,8 +21,11 @@
     ?>
 
 </head>
-<body>
 
+<body>
+    
+    <h1>Data Request</h1>
+    
     <?php
         foreach($result as $row)
         {
@@ -39,5 +42,6 @@
     ?>
 
 </body>
+
 </html>
 
