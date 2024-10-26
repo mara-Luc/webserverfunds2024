@@ -33,7 +33,7 @@
     $spell = htmlspecialchars($_POST['spell']);
 
     foreach ($result as $row) {
-        echo "<p>Hello, your name is: " . htmlspecialchars($row['firstname']) . " " . htmlspecialchars($row['lastname']) . ". Your school is: " . htmlspecialchars($row['school']) . ". Your favorite spell is: " . htmlspecialchars($row['spell']) . ".</p>";
+        echo "<p>Hello, your name is: $firstname $lastname. Your school is: $school. Your favorite spell is: $spell.</p>";
     }
     // Don't forget to close the connection!
     mysqli_close($conn);
