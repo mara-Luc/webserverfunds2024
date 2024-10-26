@@ -25,45 +25,6 @@
 
     <body>
         <h1>Harry Potter Example</h1>
-        
-        <!--using forms to Authenticate user with user name being required and having a placeholder for clairity-->
-        <!--modified form to action/method for php "form_response.php"-->
-        <form action="process_form.php" method="POST">
-            <!-- Your form inputs here -->
-            
-            <label for="username">Username</label>
-            
-            <input type="username" id="username" name="username" placeholder="your username or email">
-            <br>
-            
-            <label for="firstname">First Name</label>
-            
-            <input type="firstname" id="firstname" name="firstname" placeholder="John">
-            <br>
-
-            <label for="lastname">Last Name</label>
-            
-            <input type="lastname" id="lastname" name="lastname" placeholder="Smith">
-            <br>
-
-            <label for="school">School Attending</label>
-            
-            <input type="school" id="school" name="school" placeholder="Hogwarts">
-            <br>
-
-            <label for="spell">What is your favorite Spell?</label>
-            
-            <input type="spell" id="spell" name="spell" placeholder="Expelliarmus">
-            <br>
-
-            <!--using forms to Authenticate user with password that needs to be 8 char using pattern and having a placeholder for clairity-->
-            <label for="pwd">Password:</label>
-        
-            <input type="password" id="pwd" name="pwd" pattern=".{8,}" title="Eight or more characters" placeholder="your password">
-            <br><br>            
-            <input type="submit" value="Submit"/>   
-        </form>
-    
         <br><br>
         
         <!-- 
@@ -84,10 +45,8 @@
                 ?>
             
             </select>
-
-        <br/>
         
-        <input type="submit" value="submit"/>
+            <input type="submit" value="submit"/>
         
         </form>
 
