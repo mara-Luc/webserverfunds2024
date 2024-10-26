@@ -32,11 +32,12 @@
     $school = htmlspecialchars($_POST['school']);
     $spell = htmlspecialchars($_POST['spell']);
 
-    foreach ($result as $row) {
-        echo "<p>Hello, your name is: $firstname $lastname. Your school is: $school. Your favorite spell is: $spell.</p>";
-    }
+    echo "<p>Hello, your name is: $firstname $lastname. Your school is: $school. Your favorite spell is: $spell.</p>";
+    
     // Don't forget to close the connection!
     mysqli_close($conn);
+    
     ?>
+    
 </body>
 </html>
