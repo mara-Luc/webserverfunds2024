@@ -41,7 +41,7 @@
                     }
 
                     // Don't forget to close the connection!
-                    mysqli_close($conn);
+                    //mysqli_close($conn);
                 ?>
             
             </select>
