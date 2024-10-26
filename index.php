@@ -54,10 +54,13 @@
         <a href="createaccount.php">Create an Account?</a>
         <br><br>
     
-        <a href="Signin.php">Already have an Account? Sign in?</a>
+        <a href="Signin.php">Sign in?</a>
         <br><br>
     
         <a href="about.php">About Me</a>
+        <br><br>
+
+        <a href="hp_example.php">DataBase example</a>
         <br><br>
     
         <h3>References</h3>

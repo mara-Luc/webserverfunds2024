@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-    <title>Data Request</title>
+    <title>Processing Forms</title>
     	<?php
 	// Retrieve submitted information
 	$server = "localhost";
