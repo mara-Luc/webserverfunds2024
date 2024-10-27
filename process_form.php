@@ -3,7 +3,7 @@
 <head>
     <title>Process Form</title>
     <p>POST: <?= var_dump($_POST) ?></p>
-    
+    <p>GET: <?= var_dump($_GET) ?>
     <?php
     // Retrieve submitted information
     $user_input = htmlspecialchars($_POST["username"]); // Changed the variable name to avoid conflict
