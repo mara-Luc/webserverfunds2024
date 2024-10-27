@@ -19,15 +19,11 @@
     $sql = "SELECT firstname, lastname, school, spell FROM users WHERE username='$user_input'";
     $result = mysqli_query($conn, $sql);
 
-    if ($result && mysqli_num_rows($result) > 0) {
         $row = mysqli_fetch_all($results, MYSQLI_ASSOC);
         $firstname = htmlspecialchars($row['firstname']);
         $lastname = htmlspecialchars($row['lastname']);
         $school = htmlspecialchars($row['school']);
         $spell = htmlspecialchars($row['spell']);
-    } else {
-        $firstname = $lastname = $school = $spell = "Not found";
-    }
     ?>
 </head>
 <body>
