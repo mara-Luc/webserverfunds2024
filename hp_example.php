@@ -27,8 +27,7 @@
         <h1>Harry Potter Example</h1>
         <br><br>
         
-        <!-- 
-        <form action="Data_request.php" method="GET">-->
+        <!---->
         <form action="process_form.php" method="POST">
             <label for="username">Select a username:</label><br/>
             
