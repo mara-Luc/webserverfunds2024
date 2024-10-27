@@ -2,11 +2,9 @@
 <html>
 <head>
     <title>Process Form</title>
-    <p>POST: <?= var_dump($_POST) ?></p>
-    <p>GET: <?= var_dump($_GET) ?>
     <?php
     // Retrieve submitted information
-    $user_input = htmlspecialchars($_POST["username"]); // Changed the variable name to avoid conflict
+    $user_input = htmlspecialchars($_POST["users"]); // Changed the variable name to avoid conflict
     $server = "localhost";
     $db_username = "php"; // Changed the variable name to avoid conflict
     $password = "Voidnull0";
@@ -21,17 +19,20 @@
     $sql = "SELECT firstname, lastname, school, spell FROM users WHERE username='$user_input'";
     $result = mysqli_query($conn, $sql);
 
-        $firstname = htmlspecialchars($results['firstname']);
-        $lastname = htmlspecialchars($results['lastname']);
-        $school = htmlspecialchars($results['school']);
-        $spell = htmlspecialchars($results['spell']);
-
+    if ($result && mysqli_num_rows($result) > 0) {
+        $row = mysqli_fetch_assoc($result);
+        $firstname = htmlspecialchars($row['firstname']);
+        $lastname = htmlspecialchars($row['lastname']);
+        $school = htmlspecialchars($row['school']);
+        $spell = htmlspecialchars($row['spell']);
+    } else {
+        $firstname = $lastname = $school = $spell = "Not found";
+    }
     ?>
 </head>
 <body>
     <h1>Process Form</h1>
     <?php
-    
     echo "<p>Hello, your name is: $firstname $lastname. Your school is: $school. Your favorite spell is: $spell.</p>";
 
     // Close the connection
