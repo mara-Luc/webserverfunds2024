@@ -20,16 +20,18 @@
     $sql = "SELECT firstname, lastname, school, spell FROM users WHERE username='$user_input'";
     $result = mysqli_query($conn, $sql);
 
-    $firstname = htmlspecialchars($result['firstname']);
-    $lastname = htmlspecialchars($result['lastname']);
-    $school = htmlspecialchars($result['school']);
-    $spell = htmlspecialchars($result['spell']);
     ?>
 
 </head>
 <body>
     <h1>Process Form</h1>
     <?php
+    if (isset($firstname) && isset($lastname) && isset($school) && isset($spell)) {
+        echo "<p>Hello, your name is: $firstname $lastname. Your school is: $school. Your favorite spell is: $spell.</p>";
+    } else {
+        echo "<p>No results found for the username: " . htmlspecialchars($user_input) . "</p>";
+    }
+    
     echo "<p>Hello, your name is: $firstname $lastname. Your school is: $school. Your favorite spell is: $spell.</p>";
 
     // Close the connection
