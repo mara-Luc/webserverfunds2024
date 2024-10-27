@@ -17,7 +17,7 @@
                 die("Connection failed: {mysqli_connect_error()}");
                 }
             
-                $sql = "select * from users;";
+                $sql = "SELECT * FROM users;";
                 $result = mysqli_query($conn, $sql);
         ?>
         
@@ -43,13 +43,15 @@
                     mysqli_close($conn);
                 ?>
             
-            <input type="submit" value="Submit"/>
             
-        </select>
+            
+            </select>
+        
+            <input type="submit" value="Submit"/>
         
         </form>
         
-        <form action="process_form.php" method="POST">
+        <form action="process_form.php" method="GET">
             <label for="username">Select a username:</label><br/>
             
             <br><br>
