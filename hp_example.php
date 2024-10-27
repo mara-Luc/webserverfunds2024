@@ -47,7 +47,10 @@
             
         </select>
         
-            
+        </form>
+        
+        <form action="process_form.php" method="POST">
+            <label for="username">Select a username:</label><br/>
             
             <br><br>
         
