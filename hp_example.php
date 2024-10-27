@@ -47,6 +47,13 @@
         
             <input type="submit" value="Submit"/>
         
+            <!--action="/action_page.php">-->
+            
+            <label for="username">Enter Username</label>
+            
+            <input type="username" id="username" name="username" placeholder="make a username">
+            <br><br>
+            
         </form>
 
         <br><br>
