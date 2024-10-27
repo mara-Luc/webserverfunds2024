@@ -2,6 +2,9 @@
 <html>
 <head>
     <title>Process Form</title>
+    <p>GET: <?= var_dump($_GET) ?></p>
+    <p>POST: <?= var_dump($_POST) ?></p>
+    
     <?php
     // Retrieve submitted information
     $user_input = htmlspecialchars($_POST["users"]); // Changed the variable name to avoid conflict
