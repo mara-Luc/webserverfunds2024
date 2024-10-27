@@ -5,7 +5,7 @@
     
     <?php
         // Retrieve submitted information
-        $$user_input = htmlspecialchars($_POST["users"]);
+        $user_input = htmlspecialchars($_POST["users"]);
         $server = "localhost";
         $username = "php";
         $password = "Voidnull0";
