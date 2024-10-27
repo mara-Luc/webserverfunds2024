@@ -5,7 +5,7 @@
     
     <?php
         // Retrieve submitted information
-        $user_input = htmlspecialchars($_POST["username"]);
+        $user_input = htmlspecialchars($_POST["users"]);
         $server = "localhost";
         $username = "php";
         $password = "Voidnull0";
@@ -23,10 +23,10 @@
         //Seperating the array
         if ($result && mysqli_num_rows($result) > 0) {
             $row = mysqli_fetch_assoc($result);
-            $firstname = htmlspecialchars($row['firstname']);
-            $lastname = htmlspecialchars($row['lastname']);
-            $school = htmlspecialchars($row['school']);
-            $spell = htmlspecialchars($row['spell']);
+            $firstname = htmlspecialchars($result)['firstname']);
+            $lastname = htmlspecialchars($result)['lastname']);
+            $school = htmlspecialchars($$result)['school']);
+            $spell = htmlspecialchars($result)['spell']);
         } else {
             $firstname = $lastname = $school = $spell = "Not found";
         }
