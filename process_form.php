@@ -5,7 +5,7 @@
     
     <?php
         // Retrieve submitted information
-        $user_input = htmlspecialchars($_POST["users"]);
+        $user_input = htmlspecialchars($_POST["username"]);
         $server = "localhost";
         $username = "php";
         $password = "Voidnull0";
@@ -37,8 +37,7 @@
 <body>
     <h1>Process Form</h1>
     <?php
-
-
+    
     echo "<p>Hello, your name is: $firstname $lastname. Your school is: $school. Your favorite spell is: $spell.</p>";
 
     // Don't forget to close the connection!
