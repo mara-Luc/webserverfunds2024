@@ -43,24 +43,21 @@
                     mysqli_close($conn);
                 ?>
             
-            </select>
-        
             <input type="submit" value="Submit"/>
+            
+        </select>
+        
+            
             
             <br><br>
         
-            <h1>Harry Potter Example</h1>
+            <h3>Harry Potter input</h3>
 
             <br><br>
             
             <label for="username">Enter Username</label>
             
             <input type="username" id="username" name="username" placeholder="make a username">
-            <br><br>
-            
-            <label for="username">Username</label>
-            
-            <input type="username" id="username" name="username" placeholder="your username or email">
             <br>
             
             <label for="firstname">First Name</label>
@@ -81,7 +78,7 @@
             <label for="spell">What is your favorite Spell?</label>
             
             <input type="spell" id="spell" name="spell" placeholder="Expelliarmus">
-            
+
             <br><br>            
             <input type="submit" value="Submit"/>   
         
