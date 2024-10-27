@@ -17,7 +17,7 @@
             die("Connection failed: {mysqli_connect_error()}");
         }
 
-        $sql = "select firstname, lastname, school, spell from courses where username='{$username}';";
+        $sql = "select firstname, lastname, school, spell from users where username='{$username}';";
         $result = mysqli_query($conn, $sql);
     ?>
 
@@ -38,6 +38,6 @@
     mysqli_close($conn);
     
     ?>
-    
+
 </body>
 </html>
