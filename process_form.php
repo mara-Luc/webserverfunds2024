@@ -2,8 +2,6 @@
 <html>
 <head>
     <title>Process Form</title>
-    <p>GET: <?= var_dump($_GET) ?></p>
-    <p>POST: <?= var_dump($_POST) ?></p>
     
     <?php
     // Retrieve submitted information
