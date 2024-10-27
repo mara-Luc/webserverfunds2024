@@ -4,7 +4,7 @@
     <title>Process Form</title>
     <?php
     // Retrieve submitted information
-    $user_input = htmlspecialchars($_POST["users"]); // Changed the variable name to avoid conflict
+    $user_input = htmlspecialchars($_POST["username"]); // Changed the variable name to avoid conflict
     $server = "localhost";
     $db_username = "php"; // Changed the variable name to avoid conflict
     $password = "Voidnull0";
@@ -20,7 +20,7 @@
     $result = mysqli_query($conn, $sql);
 
     if ($result && mysqli_num_rows($result) > 0) {
-        $row = mysqli_fetch_assoc($result);
+        $row = mysqli_fetch_all($results, MYSQLI_ASSOC);
         $firstname = htmlspecialchars($row['firstname']);
         $lastname = htmlspecialchars($row['lastname']);
         $school = htmlspecialchars($row['school']);
