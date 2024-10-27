@@ -20,16 +20,12 @@
     $sql = "SELECT firstname, lastname, school, spell FROM users WHERE username='$user_input'";
     $result = mysqli_query($conn, $sql);
 
-    if ($result && mysqli_num_rows($result) > 0) {
-        $row = mysqli_fetch_assoc($result);
-        $firstname = htmlspecialchars($row['firstname']);
-        $lastname = htmlspecialchars($row['lastname']);
-        $school = htmlspecialchars($row['school']);
-        $spell = htmlspecialchars($row['spell']);
-    } else {
-        $firstname = $lastname = $school = $spell = "Not found";
-    }
+    $firstname = htmlspecialchars($result['firstname']);
+    $lastname = htmlspecialchars($result['lastname']);
+    $school = htmlspecialchars($result['school']);
+    $spell = htmlspecialchars($result['spell']);
     ?>
+
 </head>
 <body>
     <h1>Process Form</h1>
