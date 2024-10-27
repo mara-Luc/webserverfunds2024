@@ -36,7 +36,7 @@
                 <?php
                     foreach($result as $row)
                     {
-                        echo "<option value = {$row['username']}</option>\n";
+                        echo "<option>{$row['username']}</option>\n";
                     }
 
                     // Don't forget to close the connection!
