@@ -27,13 +27,18 @@
     <h1>Process Form</h1>
     <?php
     // Sanitize inputs
-    $firstname = htmlspecialchars($_POST['firstname']);
-    $lastname = htmlspecialchars($_POST['lastname']);
-    $school = htmlspecialchars($_POST['school']);
-    $spell = htmlspecialchars($_POST['spell']);
+    //$firstname = htmlspecialchars($_POST['firstname']);
+    //$lastname = htmlspecialchars($_POST['lastname']);
+    //$school = htmlspecialchars($_POST['school']);
+    //$spell = htmlspecialchars($_POST['spell']);
 
-    echo "<p>Hello, your name is: $firstname $lastname. Your school is: $school. Your favorite spell is: $spell.</p>";
+    //echo "<p>Hello, your name is: $firstname $lastname. Your school is: $school. Your favorite spell is: $spell.</p>";
     
+    foreach($result as $row) // There should only be one row returned!
+    {
+        echo "<p>Hello, your name is: $firstname $lastname. Your school is: $school. Your favorite spell is: $spell.</p>";
+    }
+
     // Don't forget to close the connection!
     mysqli_close($conn);
     
