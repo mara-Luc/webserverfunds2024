@@ -32,19 +32,8 @@
 <body>
     <h1>Process Form</h1>
     <?php
-     
-    if ($result->num_rows > 0) {
-        // output data of each row
-        while($row = $result->fetch_assoc()) {
-        echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
-    }
-
-    } 
-    else {
-        echo "0 results";
-    }
     
-    //echo "<p>Hello, your name is: $firstname $lastname. Your school is: $school. Your favorite spell is: $spell.</p>";
+    echo "<p>Hello, your name is: $firstname $lastname. Your school is: $school. Your favorite spell is: $spell.</p>";
 
     // Close the connection
     mysqli_close($conn);
