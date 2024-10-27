@@ -46,14 +46,45 @@
             </select>
         
             <input type="submit" value="Submit"/>
+            
+            <br><br>
         
-            <!--action="/action_page.php">-->
+            <h1>Harry Potter Example</h1>
+
+            <br><br>
             
             <label for="username">Enter Username</label>
             
             <input type="username" id="username" name="username" placeholder="make a username">
             <br><br>
             
+            <label for="username">Username</label>
+            
+            <input type="username" id="username" name="username" placeholder="your username or email">
+            <br>
+            
+            <label for="firstname">First Name</label>
+            
+            <input type="firstname" id="firstname" name="firstname" placeholder="John">
+            <br>
+
+            <label for="lastname">Last Name</label>
+            
+            <input type="lastname" id="lastname" name="lastname" placeholder="Smith">
+            <br>
+
+            <label for="school">School Attending</label>
+            
+            <input type="school" id="school" name="school" placeholder="Hogwarts">
+            <br>
+
+            <label for="spell">What is your favorite Spell?</label>
+            
+            <input type="spell" id="spell" name="spell" placeholder="Expelliarmus">
+            
+            <br><br>            
+            <input type="submit" value="Submit"/>   
+        
         </form>
 
         <br><br>
