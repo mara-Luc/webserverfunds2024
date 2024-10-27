@@ -2,6 +2,8 @@
 <html>
 <head>
     <title>Process Form</title>
+    <p>POST: <?= var_dump($_POST) ?></p>
+    
     <?php
     // Retrieve submitted information
     $user_input = htmlspecialchars($_POST["username"]); // Changed the variable name to avoid conflict
