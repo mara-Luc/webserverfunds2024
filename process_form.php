@@ -4,8 +4,6 @@
     <head>
         <title>SQL test</title>
         
-        <p>GET: <?= var_dump($_GET) ?></p>
-        
         <?php
 
             // Retrieve submitted information
@@ -32,7 +30,9 @@
     <body>
 
         <?php
-            echo "You selected username: " htmlspecialchars($user_info)."\n";
+            
+            echo "You selected username: htmlspecialchars('$user_info')." "\n";
+            
             foreach($result as $row) // There should only be one row returned!
             {
                 echo "<p>Hello, your name is: {$row['firstname']} {$row['lastname']}. Your school is: {$row['school']}. Your favorite spell is: {$row['spell']}.</p>";
