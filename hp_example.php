@@ -27,7 +27,7 @@
     <body>
         <h1>Harry Potter Example</h1>
         <br><br>
-        
+        <h2>Pick a username already in database to find out more about them!</h2>
         <!--based on Teacher example: select from already stored usernames and have returned stats about username creator-->
         <form action="process_form.php" method="get">
             <label for="username">Select a username:</label><br/>
@@ -44,12 +44,14 @@
             
             </select>
 
-            <br/>
+            <br><br> 
         
             <input type="submit" value="submit"/>
         
         </form>
 
+        <br><br>
+        <h2>Add a username (and your info) to the database!</h2>
         <!--Input of a new entry into the database-->
         <form action="Data_entry.php" method="POST">
             <!-- Your form inputs here -->
