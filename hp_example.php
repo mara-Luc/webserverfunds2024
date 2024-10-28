@@ -28,7 +28,7 @@
         <h1>Harry Potter Example</h1>
         <br><br>
         
-        <!---->
+        <!--based on Teacher example: select from already stored usernames and have returned stats about username creator-->
         <form action="process_form.php" method="get">
             <label for="username">Select a username:</label><br/>
             <select id="username" name="username">
@@ -50,7 +50,42 @@
         
         </form>
 
+        <!--Input of a new entry into the database-->
+        <form action="Data_entry.php" method="POST">
+            <!-- Your form inputs here -->
+            
+            <label for="username">Username</label>
+            
+            <input type="username" id="username" name="username" placeholder="your username" required>
+            <br>
+            
+            <label for="firstname">First Name</label>
+            
+            <input type="firstname" id="firstname" name="firstname" placeholder="John" required>
+            <br>
+
+            <label for="lastname">Last Name</label>
+            
+            <input type="lastname" id="lastname" name="lastname" placeholder="Smith" required>
+            <br>
+
+            <label for="school">School Attending</label>
+            
+            <input type="school" id="school" name="school" placeholder="Hogwarts" required>
+            <br>
+
+            <label for="spell">What is your favorite Spell?</label>
+            
+            <input type="spell" id="spell" name="spell" placeholder="Expelliarmus" required>
+            
+            <br><br>            
+            
+            <input type="submit" value="Submit"/>   
+
+        </form>
+
         <br><br>
+
         <!--A way back to main site-->
         <a href="index.php">Back to the landing page</a>
     
