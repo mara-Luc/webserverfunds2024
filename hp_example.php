@@ -16,9 +16,12 @@
             if (!$conn) {
                 die("Connection failed: {mysqli_connect_error()}");
                 }
-            
+                //write a query for all users
                 $sql = "SELECT * FROM users;";
+                //make query & get results
                 $result = mysqli_query($conn, $sql);
+                //echo results
+                echo $sql;
         ?>
         
     </head>
@@ -28,64 +31,24 @@
         <br><br>
         
         <!---->
-        <form action="process_form.php" method="POST">
+        <form action="process_form.php" method="get">
             <label for="username">Select a username:</label><br/>
-            
-            <select username="username">
-                
+            <select id="username" name="username">
                 <?php
                     foreach($result as $row)
                     {
                         echo "<option>{$row['username']}</option>\n";
                     }
-
+                    
                     // Don't forget to close the connection!
                     mysqli_close($conn);
                 ?>
             
-            
-            
             </select>
+
+            <br/>
         
-            <input type="submit" value="Submit"/>
-        
-        </form>
-        
-        <form action="process_form.php" method="GET">
-            <label for="username">Select a username:</label><br/>
-            
-            <br><br>
-        
-            <h3>Harry Potter input</h3>
-
-            <br><br>
-            
-            <label for="username">Enter Username</label>
-            
-            <input type="username" id="username" name="username" placeholder="make a username">
-            <br>
-            
-            <label for="firstname">First Name</label>
-            
-            <input type="firstname" id="firstname" name="firstname" placeholder="John">
-            <br>
-
-            <label for="lastname">Last Name</label>
-            
-            <input type="lastname" id="lastname" name="lastname" placeholder="Smith">
-            <br>
-
-            <label for="school">School Attending</label>
-            
-            <input type="school" id="school" name="school" placeholder="Hogwarts">
-            <br>
-
-            <label for="spell">What is your favorite Spell?</label>
-            
-            <input type="spell" id="spell" name="spell" placeholder="Expelliarmus">
-
-            <br><br>            
-            <input type="submit" value="Submit"/>   
+            <input type="submit" value="submit"/>
         
         </form>
 

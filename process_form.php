@@ -1,45 +1,45 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>Process Form</title>
+    <html>
     
-    <?php
-    // Retrieve submitted information
-    $user_input = htmlspecialchars($_POST["users"]); // Changed the variable name to avoid conflict
-    $server = "localhost";
-    $db_username = "php"; // Changed the variable name to avoid conflict
-    $password = "Voidnull0";
-    $database = "signinDB";
-    $conn = mysqli_connect($server, $db_username, $password, $database);
+    <head>
+        <title>SQL test</title>
+        
+        <?php
+        
+            // Retrieve submitted information
+            $user_info = htmlspecialchars($_GET["usernames"]);
+            $server = "localhost";
+            $db_username = "php"; // Changed the variable name to avoid conflict
+            $password = "Voidnull0";
+            $database = "signinDB";
+            $conn = mysqli_connect($server, $db_username, $password, $database);
 
-    // Check for successful connection
-    if (!$conn) {
-        die("Connection failed: " . mysqli_connect_error());
-    }
+            // Check for successful connection
+            if (!$conn) {
+                die("Connection failed: {mysqli_connect_error()}");
+            }
 
-    $sql = "SELECT firstname, lastname, school, spell FROM users WHERE username='$user_input'";
-    $result = mysqli_query($conn, $sql);
-
-    ?>
-
-</head>
-<body>
-    <h1>Process Form</h1>
-    <?php
-    if (isset($firstname) && isset($lastname) && isset($school) && isset($spell)) {
-        echo "<p>Hello, your name is: $firstname $lastname. Your school is: $school. Your favorite spell is: $spell.</p>";
-    } else {
-        echo "<p>No results found for the username: " . htmlspecialchars($user_input) . "</p>";
-    }
+            $sql = "select course_name, num_students from courses where course_number='{$user_info}';";
+            
+            $result = mysqli_query($conn, $sql);
+        
+        ?>
     
-    echo "<p>Hello, your name is: $firstname $lastname. Your school is: $school. Your favorite spell is: $spell.</p>";
+    </head>
 
-    // Close the connection
-    mysqli_close($conn);
-    ?>
-    
-    <p>GET: <?= var_dump($_GET) ?></p>
-    <p>POST: <?= var_dump($_POST) ?></p>
+    <body>
+        You selected username <?= $user_info ?>.<br/>
+        <?php
+        
+            foreach($result as $row) // There should only be one row returned!
+            {
+                echo "<p>Hello, your name is: {$row['firstname']} {$row['lastname']}. Your school is: {$row['school']}. Your favorite spell is: {$row['spell']}.</p>";
+            }
 
-</body>
+            // Don't forget to close the connection!
+            mysqli_close($conn);
+        ?>
+
+    </body>
+
 </html>
