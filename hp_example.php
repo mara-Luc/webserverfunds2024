@@ -20,8 +20,6 @@
                 $sql = "SELECT * FROM users;";
                 //make query & get results
                 $result = mysqli_query($conn, $sql);
-                //echo results
-                echo $sql;
         ?>
         
     </head>

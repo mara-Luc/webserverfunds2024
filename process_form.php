@@ -4,10 +4,19 @@
     <head>
         <title>SQL test</title>
         
+        <p>GET: <?= var_dump($_GET) ?></p>
+        
         <?php
         
+            //echo results
+            echo $sql;
+
             // Retrieve submitted information
             $user_info = htmlspecialchars($_GET["usernames"]);
+
+            //echo results
+            echo $sql;
+
             $server = "localhost";
             $db_username = "php"; // Changed the variable name to avoid conflict
             $password = "Voidnull0";
