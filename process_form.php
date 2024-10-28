@@ -31,7 +31,7 @@
 
         <?php
             
-            echo "You selected username: htmlspecialchars('$user_info')." "\n";
+            //echo "You selected username: htmlspecialchars('$user_info')." "\n";
             
             foreach($result as $row) // There should only be one row returned!
             {
