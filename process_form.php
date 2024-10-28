@@ -7,7 +7,7 @@
         <?php
 
             // Retrieve submitted information
-            $user_info = htmlspecialchars($_GET["usernames"]);
+            $user_info = htmlspecialchars($_GET["username"]);
             $server = "localhost";
             $db_username = "php"; // Changed the variable name to avoid conflict
             $password = "Voidnull0";
