@@ -7,16 +7,9 @@
         <p>GET: <?= var_dump($_GET) ?></p>
         
         <?php
-        
-            //echo results
-            echo $sql;
 
             // Retrieve submitted information
             $user_info = htmlspecialchars($_GET["usernames"]);
-
-            //echo results
-            echo $sql;
-
             $server = "localhost";
             $db_username = "php"; // Changed the variable name to avoid conflict
             $password = "Voidnull0";
@@ -28,7 +21,7 @@
                 die("Connection failed: {mysqli_connect_error()}");
             }
 
-            $sql = "select course_name, num_students from courses where course_number='{$user_info}';";
+            $sql = "SELECT firstname, lastname, school, spell FROM users WHERE username='$user_info'";
             
             $result = mysqli_query($conn, $sql);
         
@@ -37,9 +30,9 @@
     </head>
 
     <body>
-        You selected username <?= $user_info ?>.<br/>
+
         <?php
-        
+            echo "You selected username: " htmlspecialchars($user_info)."\n";
             foreach($result as $row) // There should only be one row returned!
             {
                 echo "<p>Hello, your name is: {$row['firstname']} {$row['lastname']}. Your school is: {$row['school']}. Your favorite spell is: {$row['spell']}.</p>";
