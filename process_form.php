@@ -31,8 +31,10 @@
 
         <?php
             
-            //echo "You selected username: htmlspecialchars('$user_info')." "\n";
-            
+            //echo selection
+            echo "You selected username: " . htmlspecialchars($user_info) . ".<br>";
+
+
             foreach($result as $row) // There should only be one row returned!
             {
                 echo "<p>Hello, your name is: {$row['firstname']} {$row['lastname']}. Your school is: {$row['school']}. Your favorite spell is: {$row['spell']}.</p>";
