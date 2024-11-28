@@ -62,3 +62,8 @@ function fetchText()
                 document.getElementById("demo").innerHTML = myText;
             }
     }
+
+function ledBttn()
+    {
+        
+    }

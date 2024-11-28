@@ -62,6 +62,9 @@
 
         <a href="hp_example.php">DataBase example</a>
         <br><br>
+
+        <a href="gpio_pi_bme280.php">Reading a GPIO button and values from the BME280 example</a>
+        <br><br>
     
         <h3>References</h3>
         <!--Connecting it to other pages on a different tab as well as shown in an unordered list-->
