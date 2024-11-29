@@ -1,44 +1,25 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>GPIO Page</title>
-        <h1>Control LED</h1>
-        <!--Link to my Java Script file with functions-->
-        <script src="Sandbox.js"></script>
-    </head>
-    <body>
-        <!--API simple fetch text-->
-       
-        <p id="gpio_input">Toggle LED</p>
-                
-                <button onclick="ledBttn()">Push Button</button>
-                <?php
-
-                    $output = `gpio toggle 23`;
-                
-                    echo "LED on: " . $output;
-                
-                ?>
-        <h1>Control LED</h1>
-        
-        <form action="control_led.php" method="post">
-        <button type="submit" name="toggle" value="1">Toggle LED</button>
-        </form>
-
-            <br><br>
-
-        <!--A way back to main site-->
-        <a href="index.php">Back to the landing page</a>
-
-    </body>
-</html>
-<!DOCTYPE html>
-<html>
 <head>
-    
+    <title>GPIO</title>
+    <script>
+        function toggleLED() {
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "control_led.php", true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    document.getElementById("status").innerText = xhr.responseText;
+                }
+            };
+            xhr.send("toggle=1");
+        }
+    </script>
 </head>
 <body>
-    
-    
+    <h1>Control LED</h1>
+    <button onclick="toggleLED()">Toggle LED</button>
+    <p id="status">LED Status: Unknown</p>
 </body>
 </html>
+
