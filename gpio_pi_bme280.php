@@ -25,10 +25,7 @@
     </script>
 </head>
 <body>
-    <h1>Control LED</h1>
-    <button onclick="toggleLED()">Toggle LED</button>
-    
-    <br><br>
+
     <button id="toggleButton" onclick="toggleLED()">Loading...</button>
     <br><br>
 
