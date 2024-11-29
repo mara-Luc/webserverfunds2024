@@ -1,15 +1,9 @@
 <?php
 if (isset($_POST['toggle'])) {
-    $gpioPin = 23;
-    toggleLED($gpioPin);
-    echo getLEDStatus($gpioPin);
+    shell_exec("gpio -g toggle 23");
+    echo getLEDStatus(23);
 } elseif (isset($_POST['status'])) {
-    $gpioPin = 23;
-    echo getLEDStatus($gpioPin);
-}
-
-function toggleLED($pin) {
-    shell_exec("gpio -g toggle $pin");
+    echo getLEDStatus(23);
 }
 
 function getLEDStatus($pin) {
@@ -17,4 +11,5 @@ function getLEDStatus($pin) {
     return ($state == 1) ? "LED is On" : "LED is Off";
 }
 ?>
+
 
