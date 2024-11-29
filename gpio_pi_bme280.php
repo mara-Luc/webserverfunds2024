@@ -5,48 +5,35 @@
     <title>GPIO Example</title>
 
     <!--Code for the temp/altude/humid sensor-->
-    <script>
-        function fetchReadings() {
-            const xhr = new XMLHttpRequest();
-            xhr.open("POST", "get_readings.php", true);
-            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-            xhr.onload = () => {
-                if (xhr.status === 200) {
-                    const readings = JSON.parse(xhr.responseText);
-                    document.getElementById("temperatureValue").innerText = readings.currentTemperature;
-                    document.getElementById("pressureValue").innerText = readings.currentPressure;
-                    document.getElementById("altitudeValue").innerText = readings.currentAltitude;
-                }
-            };
-            xhr.send();
-        }
-
-        function getLEDStatus() {
-            const xhr = new XMLHttpRequest();
-            xhr.open("POST", "control_led.php", true);
-            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-            xhr.onload = () => {
-                if (xhr.status === 200) {
-                    document.getElementById("toggleButton").innerText = xhr.responseText;
-                }
-            };
-            xhr.send("status=1");
-        }
-
-        window.onload = getLEDStatus; // Check LED status when the page loads
-    </script>
-
+    <h1>Sensor Readings</h1>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        h1 { color: #333; }
+        button { padding: 10px 20px; font-size: 16px; }
+        p { font-size: 18px; }
+    </style>
 </head>
 <body>
-    
-    <h1>GPIO Example</h1>
-    <br><br>
-    
     <h1>Sensor Readings</h1>
-    <button onclick="fetchReadings()">Get Readings</button>
-    <p>Temperature: <span id="temperatureValue">N/A</span></p>
-    <p>Pressure: <span id="pressureValue">N/A</span></p>
-    <p>Altitude: <span id="altitudeValue">N/A</span></p>
+    <?php
+    if (isset($_POST['get_readings'])) {
+        $rawOutput = `./bme280`;
+        $data = json_decode($rawOutput, true);
+        $temperature = $data['temperature'];
+        $pressure = $data['pressure'];
+        $altitude = $data['altitude'];
+    } else {
+        $temperature = 'N/A';
+        $pressure = 'N/A';
+        $altitude = 'N/A';
+    }
+    ?>
+    <form method="post">
+        <button type="submit" name="get_readings">Get Readings</button>
+    </form>
+    <p>Temperature: <span><?php echo $temperature; ?></span></p>
+    <p>Pressure: <span><?php echo $pressure; ?></span></p>
+    <p>Altitude: <span><?php echo $altitude; ?></span></p>
     
     <br><br>
     
