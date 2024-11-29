@@ -12,6 +12,13 @@
         <p id="gpio_input">Toggle LED</p>
                 
                 <button onclick="ledBttn()">Push Button</button>
+                <?php
+
+                    $output = `gpio toggle 23`;
+                
+                    echo "LED on: " . $output;
+                
+                ?>
 
             <br><br>
 
