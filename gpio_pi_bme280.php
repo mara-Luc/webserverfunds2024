@@ -19,6 +19,11 @@
                     echo "LED on: " . $output;
                 
                 ?>
+        <h1>Control LED</h1>
+        
+        <form action="control_led.php" method="post">
+        <button type="submit" name="toggle" value="1">Toggle LED</button>
+        </form>
 
             <br><br>
 
