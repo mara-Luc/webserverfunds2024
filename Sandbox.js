@@ -63,7 +63,21 @@ function fetchText()
             }
     }
 
-function ledBttn()
+    function toggleLED() 
     {
+        var xhr = new XMLHttpRequest();
         
+        xhr.open("POST", "control_led.php", true);
+        
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        
+        xhr.onreadystatechange = function() 
+        {
+            if (xhr.readyState == 4 && xhr.status == 200) 
+            {
+                document.getElementById("status").innerText = xhr.responseText;
+            }
+        };
+        
+        xhr.send("toggle=1");
     }
