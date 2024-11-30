@@ -5,7 +5,7 @@
     <script>
         function updateReadings() {
             var xhr = new XMLHttpRequest();
-            xhr.open("GET", "get_sensor_data.php", true);
+            xhr.open("GET", "get_readings.php", true);
             xhr.onreadystatechange = function () {
                 if (xhr.readyState == 4 && xhr.status == 200) {
                     var data = JSON.parse(xhr.responseText);
