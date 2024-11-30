@@ -4,19 +4,28 @@
     <title>GPIO Example</title>
     <script>
         function updateReadings() {
-            var xhr = new XMLHttpRequest();
-            xhr.open("GET", "get_readings.php", true);
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState == 4 && xhr.status == 200) {
-                    var data = JSON.parse(xhr.responseText);
-                    document.getElementById("temperature").innerText = data.temperature;
-                    document.getElementById("pressure").innerText = data.pressure;
-                    document.getElementById("humidity").innerText = data.humidity;
-                    document.getElementById("altitude").innerText = data.altitude;
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "get_sensor_data.php", true);
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4) {
+            if (xhr.status == 200) {
+                var data = JSON.parse(xhr.responseText);
+                if (data.error) {
+                    console.error(data.error);
+                    return;
                 }
-            };
-            xhr.send();
+                document.getElementById("temperature").innerText = data.temperature;
+                document.getElementById("pressure").innerText = data.pressure;
+                document.getElementById("humidity").innerText = data.humidity;
+                document.getElementById("altitude").innerText = data.altitude;
+            } else {
+                console.error("Failed to fetch sensor data");
+            }
         }
+    };
+    xhr.send();
+}
+
     </script>
 </head>
 <body>
