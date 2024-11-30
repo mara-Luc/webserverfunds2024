@@ -5,7 +5,6 @@
     <title>GPIO Example</title>
 
     <!--Code for the temp/altude/humid sensor-->
-    <h1>Sensor Readings</h1>
     <style>
         body { font-family: Arial, sans-serif; }
         h1 { color: #333; }
