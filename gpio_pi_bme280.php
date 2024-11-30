@@ -15,24 +15,15 @@
 <body>
     <h1>Sensor Readings</h1>
     <?php
-    if (isset($_POST['get_readings'])) {
-        $rawOutput = `./bme280`;
-        $data = json_decode($rawOutput, true);
-        $temperature = $data['temperature'];
-        $pressure = $data['pressure'];
-        $altitude = $data['altitude'];
-    } else {
-        $temperature = 'N/A';
-        $pressure = 'N/A';
-        $altitude = 'N/A';
-    }
+    $raw = `./bme280`;
+    echo $raw;
+    $deserialized = json_decode($raw, true);
+    var_dump($deserialized);
+    echo $deserialized["temperature"];
+    echo $deserialized["pressure"];
+    echo $deserialized["humidity"];
+    echo $deserialized["altitude"];
     ?>
-    <form method="post">
-        <button type="submit" name="get_readings">Get Readings</button>
-    </form>
-    <p>Temperature: <span><?php echo $temperature; ?></span></p>
-    <p>Pressure: <span><?php echo $pressure; ?></span></p>
-    <p>Altitude: <span><?php echo $altitude; ?></span></p>
     
     <br><br>
     
