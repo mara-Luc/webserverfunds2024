@@ -25,10 +25,10 @@
 <body>
     <h1>BME280 Sensor Readings</h1>
     <button onclick="updateReadings()">Update Readings</button>
-    <br><br>
+    <!--<br><br>
     <p>Temperature: <span id="temperature">N/A</span></p>
     <p>Pressure: <span id="pressure">N/A</span></p>
-    <p>Humidity: <span id="humidity">N/A</span></p>
+    <p>Humidity: <span id="humidity">N/A</span></p>-->
     <br><br>
     <!--A way back to main site-->
     <a href="index.php">Back to the landing page</a>

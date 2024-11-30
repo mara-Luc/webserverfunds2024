@@ -6,7 +6,7 @@ $command = '/home/MaraLu/raspberry-pi-bme280/bme280';
 $raw = shell_exec($command);
 $deserialized = json_decode($raw);
 
-    'temperature' => $deserialized['temperature'],
-    'pressure' => $deserialized['pressure'],
-    'humidity' => $deserialized['humidity']
+    echo $deserialized['temperature'],
+    echo $deserialized['pressure'],
+    echo $deserialized['humidity']
 ?>
