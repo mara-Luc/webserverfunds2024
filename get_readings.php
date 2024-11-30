@@ -26,3 +26,4 @@ echo "<p>Pressure: " . $deserialized['pressure'] . " hPa</p>";
 echo "<p>Humidity: " . $deserialized['humidity'] . "%</p>";
 ?>
 
+
