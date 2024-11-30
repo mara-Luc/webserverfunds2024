@@ -1,10 +1,12 @@
+
+
 <?php
-$rawOutput = `./bme280`;
-$deserializedData = json_decode($rawOutput, true);
+$raw = `./bme280`;
+$deserialized = json_decode($raw, true);
 echo json_encode([
-    'currentTemperature' => $deserializedData['temperature'],
-    'currentPressure' => $deserializedData['pressure'],
-    'currentAltitude' => $deserializedData['altitude']
+    'temperature' => $deserialized['temperature'],
+    'pressure' => $deserialized['pressure'],
+    'humidity' => $deserialized['humidity'],
+    'altitude' => $deserialized['altitude']
 ]);
 ?>
-

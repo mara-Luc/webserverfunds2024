@@ -1,29 +1,32 @@
-
 <!DOCTYPE html>
 <html>
 <head>
     <title>GPIO Example</title>
-
-    <!--Code for the temp/altude/humid sensor-->
-    <style>
-        body { font-family: Arial, sans-serif; }
-        h1 { color: #333; }
-        button { padding: 10px 20px; font-size: 16px; }
-        p { font-size: 18px; }
-    </style>
+    <script>
+        function updateReadings() {
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "get_sensor_data.php", true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    var data = JSON.parse(xhr.responseText);
+                    document.getElementById("temperature").innerText = data.temperature;
+                    document.getElementById("pressure").innerText = data.pressure;
+                    document.getElementById("humidity").innerText = data.humidity;
+                    document.getElementById("altitude").innerText = data.altitude;
+                }
+            };
+            xhr.send();
+        }
+    </script>
 </head>
 <body>
     <h1>Sensor Readings</h1>
-    <?php
-    $raw = `./bme280`;
-    echo $raw;
-    $deserialized = json_decode($raw, true);
-    var_dump($deserialized);
-    echo $deserialized["temperature"];
-    echo $deserialized["pressure"];
-    echo $deserialized["humidity"];
-    echo $deserialized["altitude"];
-    ?>
+    <button onclick="updateReadings()">Update Readings</button>
+    <br><br>
+    <p>Temperature: <span id="temperature">N/A</span></p>
+    <p>Pressure: <span id="pressure">N/A</span></p>
+    <p>Humidity: <span id="humidity">N/A</span></p>
+    <p>Altitude: <span id="altitude">N/A</span></p>
     
     <br><br>
     
@@ -32,3 +35,4 @@
 
 </body>
 </html>
+
