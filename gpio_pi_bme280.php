@@ -25,6 +25,11 @@
 <body>
     <h1>BME280 Sensor Readings</h1>
     <button onclick="updateReadings()">Update Readings</button>
+    <?php
+    echo $deserialized['temperature'],
+    echo $deserialized['pressure'],
+    echo $deserialized['humidity']
+    ?>
     <!--<br><br>
     <p>Temperature: <span id="temperature">N/A</span></p>
     <p>Pressure: <span id="pressure">N/A</span></p>
