@@ -32,6 +32,6 @@
     <p>Humidity: <span id="humidity">N/A</span></p>
     <p>Altitude: <span id="altitude">N/A</span></p>
     <br><br>
-    <a href="index.html">Back to the landing page</a>
+    <a href="index.php">Back to the landing page</a>
 </body>
 </html>
