@@ -25,4 +25,6 @@ echo "<h2>Sensor Readings:</h2>";
 echo "<p>Temperature: " . $deserialized['temperature'] . "°C</p>";
 echo "<p>Pressure: " . $deserialized['pressure'] . " hPa</p>";
 echo "<p>Humidity: " . $deserialized['humidity'] . "%</p>";
+echo "<p>Altitude: " . $deserialized['altitude'] . " meters</p>";
 ?>
+
