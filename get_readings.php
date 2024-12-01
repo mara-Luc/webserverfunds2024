@@ -5,7 +5,10 @@ $command = '/home/MaraLu/raspberry-pi-bme280/bme280';
 // Execute the command and capture the output
 $raw = shell_exec($command);
 
-// Check if the command execution was successful
+// Debugging info
+$debug_info = shell_exec("whoami");
+echo "Executing as user: $debug_info <br>";
+
 if ($raw === null) {
     echo "Error: Unable to execute command.";
     exit;
