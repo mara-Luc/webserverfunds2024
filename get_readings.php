@@ -7,7 +7,7 @@ $raw = shell_exec($command);
 
 // Check if the command execution was successful
 if ($raw === null) {
-    echo "Error: Unable to execute command.";
+    echo json_encode(['error' => 'Unable to execute command.']);
     exit;
 }
 
@@ -16,15 +16,16 @@ $deserialized = json_decode($raw, true);
 
 // Check if the JSON decoding was successful
 if (json_last_error() !== JSON_ERROR_NONE) {
-    echo "Error: Invalid JSON data.";
+    echo json_encode(['error' => 'Invalid JSON data.']);
     exit;
 }
 
-// Output the sensor readings as HTML
-echo "<h2>Sensor Readings:</h2>";
-echo "<p>Temperature: " . $deserialized['temperature'] . "°C</p>";
-echo "<p>Pressure: " . $deserialized['pressure'] . " hPa</p>";
-echo "<p>Humidity: " . $deserialized['humidity'] . "%</p>";
-echo "<p>Altitude: " . $deserialized['altitude'] . " meters</p>";
+// Return the sensor readings as a JSON response
+echo json_encode([
+    'temperature' => $deserialized['temperature'],
+    'pressure' => $deserialized['pressure'],
+    'humidity' => $deserialized['humidity'],
+    'altitude' => $deserialized['altitude']
+]);
 ?>
 

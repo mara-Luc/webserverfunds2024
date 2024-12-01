@@ -2,51 +2,36 @@
 <html>
 <head>
     <title>BME280 Sensor Readings</title>
+    <script>
+        function updateReadings() {
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "get_readings.php", true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    var data = JSON.parse(xhr.responseText);
+                    if (data.error) {
+                        alert('Error: ' + data.error);
+                        return;
+                    }
+                    document.getElementById("temperature").innerText = data.temperature + "°C";
+                    document.getElementById("pressure").innerText = data.pressure + " hPa";
+                    document.getElementById("humidity").innerText = data.humidity + "%";
+                    document.getElementById("altitude").innerText = data.altitude + " meters";
+                }
+            };
+            xhr.send();
+        }
+    </script>
 </head>
 <body>
     <h1>BME280 Sensor Readings</h1>
-    
-    <form method="POST">
-        <input type="submit" name="submit" value="Update Readings"/>   
-    </form>
-    
+    <button onclick="updateReadings()">Update Readings</button>
     <br><br>
-    
-    <a href="index.php">Back to the landing page</a>
-
-    <?php
-    if (isset($_POST['submit'])) {
-        // Define the path to the bme280 command
-        $command = 'sudo -S /home/MaraLu/raspberry-pi-bme280/bme280';
-
-        // Execute the command and capture the output
-        $output = shell_exec("$command 2>&1");  // Capture any errors as well
-
-        // Debugging: Output the raw command response
-        echo "<pre>Raw Output: $output</pre>";
-
-        // Check if the command execution was successful
-        if ($output === null) {
-            echo "<p>Error: Unable to execute command.</p>";
-        } else {
-            // Decode the JSON output
-            $deserialized = json_decode($output, true);
-
-            // Check if the JSON decoding was successful
-            if (json_last_error() !== JSON_ERROR_NONE) {
-                echo "<p>Error: Invalid JSON data. JSON Error: " . json_last_error_msg() . "</p>";
-            } else {
-                // Output the sensor readings as HTML
-                echo "<h2>Sensor Readings:</h2>";
-                echo "<p>Temperature: " . $deserialized['temperature'] . "°C</p>";
-                echo "<p>Pressure: " . $deserialized['pressure'] . " hPa</p>";
-                echo "<p>Humidity: " . $deserialized['humidity'] . "%</p>";
-                echo "<p>Altitude: " . $deserialized['altitude'] . " meters</p>";
-            }
-        }
-    }
-    ?>
+    <p>Temperature: <span id="temperature">N/A</span></p>
+    <p>Pressure: <span id="pressure">N/A</span></p>
+    <p>Humidity: <span id="humidity">N/A</span></p>
+    <p>Altitude: <span id="altitude">N/A</span></p>
+    <br><br>
+    <a href="index.html">Back to the landing page</a>
 </body>
 </html>
-
-
