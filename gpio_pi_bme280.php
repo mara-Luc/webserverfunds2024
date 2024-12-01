@@ -7,7 +7,7 @@
     <h1>BME280 Sensor Readings</h1>
     
     <form action="get_readings.php" method="POST">
-    <input type="submit" value="Submit"/>   
+        <input type="submit" value="Submit"/>   
     </form>
     
     <br><br>
