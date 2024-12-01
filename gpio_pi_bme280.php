@@ -17,7 +17,7 @@
     <?php
     if (isset($_POST['submit'])) {
         // Define the path to the bme280 command
-        $command = 'sudo /home/MaraLu/raspberry-pi-bme280/bme280';
+        $command = 'sudo -S /home/MaraLu/raspberry-pi-bme280/bme280';
 
         // Execute the command and capture the output
         $output = shell_exec("$command 2>&1");  // Capture any errors as well
