@@ -56,7 +56,7 @@
     
         <!--A way back to main site-->
     
-        <a href="index.html">Back to the form</a>
+        <a href="index.php">Back to the form</a>
 
     </body>
 
